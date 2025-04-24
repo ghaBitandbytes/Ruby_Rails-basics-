@@ -1,0 +1,179 @@
+ #QUESTION NO . 4
+
+# #create a method filter that takes an array and a block, returning a new array with elements for which the block returns true. (block filters even numbers)
+
+# def filter (arr, &block)
+#     arra = []
+
+#     n = 0 
+#     while n < arr.length do 
+#     num = block.call
+#     if num == true
+#         puts"it is odd"
+#     else
+#         puts"it is even"
+#         n+=1
+#     end
+# end
+
+ 
+# end
+
+# i = 0
+# arr = [1, 2, 3, 4, 5, 6, 8]
+
+# filter(arr) { arr[i+=1] % 2 == 0? true : false }
+
+
+
+
+
+
+# #-----------ARRAYS(AND METHODS) IN DETAIL------------
+
+
+
+
+
+#QUESTION NO . 5
+
+# Given an array of positive integers arr[] of size n, the task is to find second largest distinct element in the array.
+# Note: If the second largest element does not exist, return -1.
+
+#taking array and size as input in array 
+# puts "Enter number of elements"
+# n = gets.chomp.to_i
+# arr = []
+
+# n.times do
+#     arr<< gets.chomp.to_i
+# end
+
+# print "Entered array is : "
+# puts "#{arr}"
+
+
+# one minor mistake
+# #function returns second largest distinct element 
+# def second_lar_ele (arr)
+#     n = arr.length
+#     i = 0
+#     temp = 0
+#     sec = 0 
+#     max = 0
+
+#     n.times do
+#         temp = sec
+#         sec = max 
+#         if max < arr[i]
+#             max = arr[i]
+#         end
+#         i+=1
+#     end
+#     return temp
+# end
+
+
+##function returns second largest distinct element  
+#different approach used  : first order in ascending order 
+# def second_lar_ele (arr)
+    
+#     #sorting original array 
+#     arr.sort!
+    
+#     n = arr.length
+#     num = 0
+#     i = 0
+
+#     (n-1).times do 
+#         num = arr[i]
+#         i+=1
+#     end
+
+#     puts"#{num}"
+# end
+
+
+
+# #function return distinct elements of array 
+# def distinct_elements (arr)
+
+#     unique_arr = arr.uniq
+
+#     print "Array after removing duplicate elements :"
+#     puts "#{unique_arr}"
+# end
+
+# distinct_elements (arr)
+# ans = second_lar_ele (arr)
+# puts "#{ans}"
+
+
+
+
+
+#----------CLASSES AND OBJECTS------------
+
+
+
+
+
+# # QUESTION NO. 1
+# # Create a class called Rectangle that has:
+# # Attributes: length and width
+# # A method area that returns the area of the rectangle
+# # A method perimeter that returns the perimeter of the rectangle
+# # A method is_square? that returns true if it's a square (i.e., length == width)
+# # Create two rectangles with different values. Display their area, perimeter, and whether each one is a square or not.
+
+# class Rectangle
+
+#     def initialize(len, wid)
+#         @length = len 
+#         @width = wid
+       
+#     end
+
+#     def area
+#       area_ans = @length * @width
+#       puts"#{area_ans}"
+   
+#     end
+
+
+#     def perimeter
+#         peri_ans = @length * @length
+#         puts"#{peri_ans}"
+#     end
+
+#     #function return boolean value 
+#     def is_square?
+#         @length == @width
+#     end
+
+# end
+
+
+
+# #creation of objects 
+
+# puts"Enter the length and width for rectangle"
+# length = gets.chomp.to_i
+# width = gets.chomp.to_i
+
+# rect1 = Rectangle.new(length, width)
+# puts"Area : "
+# rect1.area
+# puts"Perimeter: "
+# rect1.perimeter
+# num = rect1.is_square?
+# if num == true 
+#     puts " it is square "
+# else
+#     puts" it is a rectangle"
+# end
+
+
+
+
+
