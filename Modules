@@ -1,0 +1,91 @@
+#----------MODULES------------
+
+# #simple syntax of module
+# module Check_age
+
+# # No of ways to define standalone methods in modules
+#     def Check_age.age(x)
+#         #def self.age(x)
+#         if(x < 40)
+#             puts"you are young"
+#         else
+#             puts"you are old"
+#         end
+#     end
+# end
+
+# puts"Enter your age : "
+# n = gets.chomp.to_i
+# Check_age.age(n)
+
+
+
+# #Constants and Mixin behaviour of class
+# module Check_signal
+#     #Constants always in capital letters 
+#     STOP = "Red"
+#     GO = "Green"
+
+#     def Check_num(x)
+#         x+=1
+#         puts"you have crossed #{x} signals"
+#     end
+
+# end
+
+# class Traffic_signal
+#     #by including module in class..one can access constants and methods of module
+#     include Check_signal
+# end
+
+# n = 0 
+
+# #accessing constants
+# puts Traffic_signal::STOP
+# puts Traffic_signal::GO
+
+
+# puts"number of signals crossed : "
+# #creating object of class 
+# obj = Traffic_signal.new
+# obj.Check_num(n)
+
+
+
+
+
+
+# #Important CONCEPTS
+
+# 1) self : refers to the current object (CONTEXT-DEPENDANT)
+# 2)   attr_accessor     # Getter + setter
+#      attr_reader       # Getter only
+#      attr_writer       # Setter only
+# 3) Yield: Executes the block inside a method.
+# 4) Navigation Operator (&.) : safely call methods on nil objects
+#    Syntax : object&.method
+#    EXAMPLE : user = nil
+#              puts user&.name
+# 5) Ternary Operator (? :) : Syntax condition ? true_exp : false_expr
+
+
+
+#   module Action
+#     def jump
+#       @distance = rand(4) + 2
+#       puts "I jumped forward #{@distance} feet!"
+#     end
+#   end
+  
+#   class Rabbit
+#     include Action # Any class that includes a certain module can use those module's methods! This now is called a Mixin.
+#     extend Action # extend keyword mixes a module's methods at the class level. This means that class itself can use the methods, as opposed to instances of the class.
+#     attr_reader :name
+#     def initialize(name)
+#       @name = name
+#     end
+#   end
+  
+#   peter = Rabbit.new("Peter")
+#   peter.jump # include
+#   Rabbit.jump # extend (class can itself use modules' methods)
