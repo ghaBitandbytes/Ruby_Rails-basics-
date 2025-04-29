@@ -1,0 +1,103 @@
+# #Dealing with csv files 
+
+# require 'csv'
+
+# def alphabets(array, length)
+    
+#     i = 0
+#     length.times do 
+#     array[i] = [*'a'..'z', *'A'..'Z'].sample
+#     i+=1
+#     end
+
+#     return array 
+# end
+
+# def digits(array, length)
+
+#     size = array.length
+#     length.times do 
+#     array[size] = rand(10)
+#     size+=1
+#     end
+
+#     return array 
+# end
+
+# def symbols(array, length)
+
+#     size = array.length
+#     length.times do 
+#     array[size] = [rand(33..47), rand(58..64), rand(91..96), rand(123..126)].sample.chr
+#     size+=1
+#     end
+
+#     return array 
+# end
+
+
+# flag = 0
+# CSV.open("test.csv" , "w") { |csv| }
+
+# while flag < 4 do
+
+# #Ruby arrays are not static .They handle data dynamically. There is no restriction of size ... they modified according to data 
+# array = [ ]
+# length = 0 
+
+# #puts "Length of each input should not be greater than 5"
+
+# #print "Enter the number of alphabets : "
+# #length = gets.chomp.to_i
+
+# length = rand(1..5)
+# array = alphabets(array, length)
+# # print array
+# # puts" "
+
+# # print "Enter the number of digits :" 
+# # length = gets.chomp.to_i
+# length = rand(1..5)
+# array = digits(array, length)
+# # print array
+# # puts" "
+
+# # print "Enter the number of symbols "
+# # length = gets.chomp.to_i
+# length = rand(1..5)
+# array = symbols(array, length)
+# # print array
+# # puts" "
+
+# #shuffle array usinf array method 
+# shuffle_arr = array.shuffle
+# # print shuffle_arr
+# # puts" "
+
+
+# str =  shuffle_arr.join("")
+# puts str
+
+
+# CSV.open("test.csv" , "a") do |csv|
+#     csv << [str]
+# end
+
+
+# flag += 1
+
+
+# end
+ 
+
+# puts"Enter the new password : "
+# string = gets.chomp.to_s
+# #puts string
+
+# CSV.foreach("test.csv") do |row|
+#     row.each do |entry|
+#         if (entry == string)
+#             puts"Entered password is already in csv file"
+#         end
+#     end
+# end
